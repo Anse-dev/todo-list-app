@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Todo List App
 
-First, run the development server:
+This is a complex Todo List application built with Next.js and MongoDB.
 
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+### Prerequisites
+- [Node.js](https://nodejs.org/en/) (v14 or higher)
+- [MongoDB](https://www.mongodb.com/)
+
+### Steps
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/anse-dev/todo-list-app.git
+    cd todo-list-app
+    ```
+
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Create a `.env.local` file in the root of the project and add your MongoDB connection string:
+    ```env
+    MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/todo-list?retryWrites=true&w=majority
+
+    SWAGGER_API_DOC_PATH="./src/app/api"
+    ```
+
+4. Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+    The app will be available at [http://localhost:3000](http://localhost:3000).
+
+## Usage
+
+### Running the application
+To start the application in development mode, use:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For production build:
+```bash
+npm run build
+npm start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Users
+- `GET /api/users` - Get all users
+- `POST /api/users` - Create a new user
+- `GET /api/users/{id}` - Get a user by ID
+- `PATCH /api/users/{id}` - Update a user by ID
+- `DELETE /api/users/{id}` - Delete a user by ID
 
-## Learn More
+#### Tasks
+- `GET /api/tasks` - Get all tasks
+- `POST /api/tasks` - Create a new task
+- `GET /api/tasks/{id}` - Get a task by ID
+- `PATCH /api/tasks/{id}` - Update a task by ID
+- `DELETE /api/tasks/{id}` - Delete a task by ID
 
-To learn more about Next.js, take a look at the following resources:
+#### Tasklists
+- `GET /api/tasklists` - Get all tasklists
+- `POST /api/tasklists` - Create a new tasklist
+- `GET /api/tasklists/{id}` - Get a tasklist by ID
+- `PATCH /api/tasklists/{id}` - Update a tasklist by ID
+- `DELETE /api/tasklists/{id}` - Delete a tasklist by ID
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API Documentation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+API documentation is provided using Swagger. You can access the API documentation at `/api-docs`.
 
-## Deploy on Vercel
+### Adding Swagger Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To add new Swagger documentation, you can follow the pattern below:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```typescript
+/**
+ * @swagger
+ * /api/example:
+ *   get:
+ *     description: Example endpoint
+ *     responses:
+ *       200:
+ *         description: Successful response
+ */
+export const GET = async () => {
+    // Handler code
+};
+```
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```
+
