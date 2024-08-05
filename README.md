@@ -116,4 +116,5 @@ export const GET = async () => {
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 ```
-![image](https://github.com/user-attachments/assets/d2e3deff-03df-4cfb-a7fc-76675a36840e)
+![Screenshot 2024-08-05 at 15-22-21 Create Next App](https://github.com/user-attachments/assets/39b14bd2-796f-4373-9451-dcb91ed4358a)
+
