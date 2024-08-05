@@ -15,7 +15,7 @@ export const authenticate = (handler: Function) => {
 
         try {
             const user = jwt.verify(token, secret);
-            (request as any).user = user; // Attachez l'utilisateur à la requête
+            (request as any).user = user; 
             return handler(request);
         } catch (error) {
             return new NextResponse("Invalid token", { status: 403 });
